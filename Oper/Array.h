@@ -14,8 +14,11 @@ private:
 public:
     Array(size_t n);
     Array(size_t n, bool random);
-    Array(size_t n, int min, int nax);
+    Array(size_t n, int min, int max);
     Array(const Array& other);
+    Array(Array&& other) noexcept;
+    Array& operator=(const Array& other);
+    Array& operator=(Array&& other) noexcept;
     ~Array();
 
     void display() const;
